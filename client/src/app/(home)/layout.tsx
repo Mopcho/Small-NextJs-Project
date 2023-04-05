@@ -7,8 +7,8 @@ export default function HomeLayout({
 }) {
   return (
     <section className="mx-48 my-10">
-        <nav className="flex py-5 justify-end">
-            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-white">
+        <nav className="flex py-5 justify-end cyberpunk-font text-yellow-400">
+            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-yellow-400">
                 <Link href={'/'} className='hover:text-red-500 hover:scale-110'>Home</Link>
                 <p>/</p>
                 <Link href={'/about'} className='hover:text-red-500 hover:scale-110'>About</Link>
