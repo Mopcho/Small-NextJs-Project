@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(//db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral);
+
 @font-face {
   font-family: CyberpunkFont;
   src: url(../public/fonts/Cyberpunk-Regular.ttf);
@@ -111,6 +113,10 @@ a {
 
 .cyberpunk-font{
   font-family: CyberpunkFont;
+}
+
+.polysans-font {
+  font-family: PolySans;
 }
 
 @media (prefers-color-scheme: dark) {
