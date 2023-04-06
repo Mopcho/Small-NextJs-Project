@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: CyberpunkFont;
-  src: url(../public/fonts/Cyberpunk-Regular.ttf);
+  src: url(/client/src/public/fonts/Cyberpunk-Regular.ttf);
 }
 
 @layer base {
@@ -131,6 +131,7 @@ a {
 .hero-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  gap: 40px;
 }
 
 .custom-green {

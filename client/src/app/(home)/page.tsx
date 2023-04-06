@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <section className="hero-layout mt-10">
       <main>
-        <div>
-          <img src={HOMEPAGE_IMAGE.src} alt='hero' className="aspect-square rounded-xl w-3/4"></img>
-        </div>
+        <img src={HOMEPAGE_IMAGE.src} alt='hero' className="aspect-square rounded-xl w-3/4"></img>
       </main>
       <aside className='flex flex-col gap-5'>
         <StoryCard />
