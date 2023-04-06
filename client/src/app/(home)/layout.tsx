@@ -11,7 +11,7 @@ export default function HomeLayout({
             <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-white-400">
                 <MenuLink href={'/'}>Home</MenuLink>
                 <p>/</p>
-                <MenuLink href={'/about'}>Contact</MenuLink>
+                <MenuLink href={'/contact'}>Contact</MenuLink>
                 <p>/</p>
                 <MenuLink href={'/blog'}>Blog</MenuLink>
                 <p>/</p>
