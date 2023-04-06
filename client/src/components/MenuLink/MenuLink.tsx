@@ -9,7 +9,7 @@ interface MenuLinkProps {
 
 export const MenuLink = ({href, children, additionalClassNames}: MenuLinkProps) => {
     return (
-        <Link href={href} className={classNames('hover:text-red-500 hover:scale-110', additionalClassNames)}>
+        <Link href={href} className={classNames('hover:text-custom-green text-white hover:scale-110', additionalClassNames)}>
             {children}
         </Link>
     )

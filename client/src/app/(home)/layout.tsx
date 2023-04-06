@@ -7,8 +7,8 @@ export default function HomeLayout({
 }) {
   return (
     <section className="mx-48 my-10">
-        <nav className="flex py-5 justify-end polysans-font text-yellow-400">
-            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-yellow-400">
+        <nav className="flex py-5 justify-end polysans-font">
+            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-white-400">
                 <MenuLink href={'/'}>Home</MenuLink>
                 <p>/</p>
                 <MenuLink href={'/about'}>About</MenuLink>
@@ -19,7 +19,7 @@ export default function HomeLayout({
                 <p>/</p>
                 <MenuLink href={'/register'}>Register</MenuLink>
                 <p>/</p>
-                <button className='hover:text-red-500 hover:scale-110'>More <span className="text-3xl">+</span></button>
+                <button className='hover:text-custom-green hover:scale-110'>More <span className="text-3xl">+</span></button>
             </ul>
         </nav>
         {children}
