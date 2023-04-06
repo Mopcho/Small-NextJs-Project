@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { MenuLink } from "@/components/MenuLink/MenuLink";
 
 export default function HomeLayout({
   children,
@@ -9,15 +9,15 @@ export default function HomeLayout({
     <section className="mx-48 my-10">
         <nav className="flex py-5 justify-end polysans-font text-yellow-400">
             <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-yellow-400">
-                <Link href={'/'} className='hover:text-red-500 hover:scale-110'>Home</Link>
+                <MenuLink href={'/'}>Home</MenuLink>
                 <p>/</p>
-                <Link href={'/about'} className='hover:text-red-500 hover:scale-110'>About</Link>
+                <MenuLink href={'/about'}>About</MenuLink>
                 <p>/</p>
-                <Link href={'/blog'} className='hover:text-red-500 hover:scale-110'>Blog</Link>
+                <MenuLink href={'/blog'}>Blog</MenuLink>
                 <p>/</p>
-                <Link href={'/login'} className='hover:text-red-500 hover:scale-110'>Login</Link>
+                <MenuLink href={'/login'}>Login</MenuLink>
                 <p>/</p>
-                <Link href={'/register'} className='hover:text-red-500 hover:scale-110'>Register</Link>
+                <MenuLink href={'/register'}>Register</MenuLink>
                 <p>/</p>
                 <button className='hover:text-red-500 hover:scale-110'>More <span className="text-3xl">+</span></button>
             </ul>
