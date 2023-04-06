@@ -8,7 +8,9 @@ export const StoryCard: React.FC = () => {
                 <a className='custom-green hover:underline underline-offset-4 decoration-custom-green block cursor-pointer'>Mopcho</a>
                 <p className='custom-gray'>30 minutes ago</p>
             </div>
-            <img src={IMAGE.src} alt="just"/>
+            <a className='cursor-pointer'>
+                <img src={IMAGE.src} alt="just"/>
+            </a>
         </div>
     )
 }
