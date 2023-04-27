@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+$mobile: 320px;
+$tablet: 481px;
+$laptop: 769px;
+$desktop: 1025px;
+$tv: 1201px;
+
 @import url(//db.onlinewebfonts.com/c/03bd7255184e8e8ad4d2a521fa920b6c?family=PolySans+Neutral);
 
 @font-face {
@@ -132,6 +138,11 @@ a {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
+
+  @media (max-width: $desktop) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .custom-green {

@@ -121,6 +121,12 @@ a {
   grid-template-columns: 2fr 1fr;
   gap: 40px;
 }
+@media (max-width: 1025px) {
+  .hero-layout {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .custom-green {
   color: var(--green);
