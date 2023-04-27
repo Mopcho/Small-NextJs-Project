@@ -130,11 +130,21 @@ a {
 }
 
 .spacer {
-  margin: 40px 192px 40px 192px;
+  margin: 30px 150px 30px 150px;
+}
+@media (max-width: 1201px) {
+  .spacer {
+    margin: 20px 96px 20px 96px;
+  }
 }
 @media (max-width: 1025px) {
   .spacer {
     margin: 20px 96px 20px 96px;
+  }
+}
+@media (max-width: 769px) {
+  .spacer {
+    margin: 10px 48px 10px 48px;
   }
 }
 

@@ -147,10 +147,18 @@ a {
 }
 
 .spacer {
-  margin: 40px 192px 40px 192px;
+  margin: 30px 150px 30px 150px;
+
+  @media(max-width: $tv) {
+    margin: 20px 96px 20px 96px;
+  }
 
   @media(max-width: $desktop) {
     margin: 20px 96px 20px 96px;
+  }
+
+  @media(max-width: $laptop) {
+    margin: 10px 48px 10px 48px;
   }
 }
 
