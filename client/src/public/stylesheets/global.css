@@ -128,6 +128,15 @@ a {
   }
 }
 
+.spacer {
+  margin: 40px 192px 40px 192px;
+}
+@media (max-width: 1025px) {
+  .spacer {
+    margin: 20px 96px 20px 96px;
+  }
+}
+
 .custom-green {
   color: var(--green);
 }

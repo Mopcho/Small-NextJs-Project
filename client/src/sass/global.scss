@@ -145,6 +145,14 @@ a {
   }
 }
 
+.spacer {
+  margin: 40px 192px 40px 192px;
+
+  @media(max-width: $desktop) {
+    margin: 20px 96px 20px 96px;
+  }
+}
+
 .custom-green {
   color: var(--green);
 }
