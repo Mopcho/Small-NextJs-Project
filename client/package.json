@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sass-start": "sass --watch src/sass:src/public/stylesheets"
   },
   "dependencies": {
     "@types/node": "18.15.11",
