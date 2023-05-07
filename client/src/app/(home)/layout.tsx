@@ -16,8 +16,6 @@ export default function HomeLayout({
                 <MenuLink href={'/blog'}>Blog</MenuLink>
                 <p>/</p>
                 <MenuLink href={'/login'}>Login</MenuLink>
-                <p>/</p>
-                <button className='hover:text-custom-green hover:scale-110'>More <span className="text-3xl">+</span></button>
             </ul>
         </nav>
         {children}
