@@ -8,8 +8,8 @@ export const StoryCard: React.FC = () => {
                 <a className='custom-green hover:underline underline-offset-4 decoration-custom-green block cursor-pointer'>Mopcho</a>
                 <p className='custom-gray'>30 minutes ago</p>
             </div>
-            <a className='cursor-pointer'>
-                <img src={IMAGE.src} alt="just"/>
+            <a className='cursor-pointer rounded-2xl overflow-hidden max-w-max'>
+                <img src={IMAGE.src} alt="just" className='max-h-[150px]'/>
             </a>
         </div>
     )
