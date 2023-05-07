@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <section className="hero-layout mt-10">
+    <section className="hero-layout">
       <main className='flex flex-col items-center gap-6'>
         <img src={HOMEPAGE_IMAGE.src} alt='hero' className="aspect-square rounded-xl w-3/4"></img>
         <h2 className='text-custom-green text-4xl break-keep text-center'>A blog worth browsing!</h2>

@@ -6,7 +6,7 @@ export default function HomeLayout({
   children: React.ReactNode
 }) {
   return (
-    <section className="spacer">
+    <section className="main-layout">
         <nav className="flex py-5 justify-end polysans-font">
             <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-white-400">
                 <MenuLink href={'/'}>Home</MenuLink>

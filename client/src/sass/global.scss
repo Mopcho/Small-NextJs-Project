@@ -146,22 +146,66 @@ a {
   }
 }
 
-.spacer {
-  margin: 30px 150px 30px 150px;
+.main-layout {
+  padding: 30px 150px 0px 150px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   @media(max-width: $tv) {
-    margin: 20px 96px 20px 96px;
+    padding: 20px 96px 0px 96px;
   }
 
   @media(max-width: $desktop) {
-    margin: 20px 96px 20px 96px;
+    padding: 20px 96px 0px 96px;
   }
 
   @media(max-width: $laptop) {
-    margin: 10px 48px 10px 48px;
+    padding: 10px 48px 0px 48px;
   }
 }
 
+.contact-form-layout {
+  display: grid;
+  gap: 1em;
+  grid-template-areas: 
+  "firstname . lastname"
+  "message message message"
+  ". submit .";
+
+  min-width: 1000px;
+  
+  @media(max-width: $desktop) {
+    min-width: 100%;
+    grid-template-areas: 
+    "firstname"
+     "lastname"
+      "message"
+     "submit";
+  }
+
+  .contact-firstname {
+    padding: 5px 10px;
+    grid-area: firstname;
+  }
+
+  .contact-lastname {
+    padding: 5px 10px;
+    grid-area: lastname;
+  }
+
+  .contact-message {
+    padding: 5px 10px;
+    grid-area: message;
+  }
+
+  .contact-submit {
+    padding: 5px 10px;
+    grid-area: submit;
+  }
+}
+
+// Remove these and integrate it with tailwind
 .custom-green {
   color: var(--green);
 }
