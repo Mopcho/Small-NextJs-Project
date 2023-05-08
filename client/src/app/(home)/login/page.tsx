@@ -1,3 +1,4 @@
+import { ROUTE_REGISTER } from "@/constants/links";
 import Link from "next/link";
 
 export default function Login() {
@@ -11,7 +12,7 @@ export default function Login() {
                 <input className="login-password" placeholder="Password..." name="password"></input>
                 </label>
                 <button className="login-submit">Login</button>
-                <Link href='/register'>Don't have an account ? Sign up now !</Link>
+                <Link href={`/${ROUTE_REGISTER}`}>Don't have an account ? Sign up now !</Link>
           </form>
       </section>
     )
