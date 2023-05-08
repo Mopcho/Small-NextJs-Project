@@ -5,8 +5,8 @@ export const StoryCard: React.FC = () => {
         <div className="storycard">
             <div>
                 <a className='text-white text-xl font-bold decoration-custom-green hover:underline underline-offset-4 cursor-pointer block'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, hic.</a>
-                <a className='custom-green hover:underline underline-offset-4 decoration-custom-green block cursor-pointer'>Mopcho</a>
-                <p className='custom-gray'>30 minutes ago</p>
+                <a className='text-custom-green hover:underline underline-offset-4 decoration-custom-green block cursor-pointer'>Mopcho</a>
+                <p className='text-custom-gray'>30 minutes ago</p>
             </div>
             <a className='cursor-pointer rounded-2xl overflow-hidden max-w-max'>
                 <img src={IMAGE.src} alt="just" className='max-h-[150px]'/>
