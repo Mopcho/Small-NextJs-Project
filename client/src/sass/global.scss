@@ -49,11 +49,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: hsla(0,0%,7%,.8);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -147,6 +142,7 @@ a {
   .contact-message {
     padding: 7px 14px;
     grid-area: message;
+    resize: none;
 
     &:focus {
       outline: $green solid 2px;

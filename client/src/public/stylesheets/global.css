@@ -30,11 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: hsla(0, 0%, 7%, 0.8);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -119,6 +114,7 @@ a {
 .contact-form-layout .contact-message {
   padding: 7px 14px;
   grid-area: message;
+  resize: none;
 }
 .contact-form-layout .contact-message:focus {
   outline: rgb(60, 255, 208) solid 2px;
