@@ -133,4 +133,35 @@ a {
   color: rgb(50, 50, 50);
 }
 
+.login-form-layout {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  border: 2px solid rgb(60, 255, 208);
+  padding: 20px 50px;
+}
+.login-form-layout input {
+  padding: 10px 15px;
+}
+.login-form-layout input:focus {
+  outline: rgb(60, 255, 208) solid 2px;
+}
+.login-form-layout a {
+  text-decoration: 1px solid underline;
+  text-underline-offset: 3px;
+}
+.login-form-layout button {
+  padding: 10px 15px;
+  border: 1px solid white;
+  font-size: large;
+  font-weight: bold;
+  grid-area: submit;
+  transition-property: background-color, color;
+  transition: 0.2s ease-in;
+}
+.login-form-layout button:hover {
+  background-color: rgb(60, 255, 208);
+  color: rgb(50, 50, 50);
+}
+
 /*# sourceMappingURL=global.css.map */

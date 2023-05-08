@@ -164,3 +164,39 @@ a {
     }
   }
 }
+
+.login-form-layout {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  border: 2px solid $green;
+  padding: 20px 50px;
+
+  input {
+    padding: 10px 15px;
+
+    &:focus {
+      outline: $green solid 2px;
+    }
+  }
+
+  a {
+    text-decoration: 1px solid underline;
+    text-underline-offset: 3px;
+  }
+
+  button {
+    padding: 10px 15px;
+    border: 1px solid white;
+    font-size: large;
+    font-weight: bold;
+    grid-area: submit;
+    transition-property: background-color, color;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background-color: $green;
+      color: rgb(50, 50, 50);
+    }
+  }
+}
