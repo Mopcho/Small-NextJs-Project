@@ -66,6 +66,7 @@ a {
   padding: 30px 150px 0px 150px;
   display: flex;
   flex-direction: column;
+  gap: 2em;
   height: 100%;
 }
 @media (max-width: 1201px) {
