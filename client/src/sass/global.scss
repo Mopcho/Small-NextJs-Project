@@ -201,3 +201,28 @@ a {
     }
   }
 }
+
+.browse-menu {
+  display: flex;
+  gap: 2em;
+  font-size: large;
+  justify-content: center;
+  border-bottom: 1px solid white;
+  padding: 20px 10px;
+
+  li {
+    cursor: pointer;
+    list-style: none;
+    padding: 10px 15px;
+    border: 1px solid white;
+    font-size: large;
+    font-weight: bold;
+    transition-property: background-color, color;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background-color: $green;
+      color: rgb(50, 50, 50);
+    }
+  }
+}
