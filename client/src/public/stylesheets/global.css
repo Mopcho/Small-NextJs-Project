@@ -99,13 +99,14 @@ a {
 .contact-form-layout {
   display: grid;
   gap: 1em;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 50px 150px auto;
   grid-template-areas: "firstname . lastname" "message message message" ". submit .";
   min-width: 1000px;
 }
 @media (max-width: 1025px) {
   .contact-form-layout {
     min-width: 100%;
+    grid-template-rows: 50px 50px 150px auto;
     grid-template-areas: "firstname" "lastname" "message" "submit";
   }
 }
@@ -114,14 +115,14 @@ a {
   grid-area: firstname;
 }
 .contact-form-layout .contact-firstname:focus {
-  outline: rgb(60, 255, 208) solid 2px;
+  outline: rgb(0, 240, 255) solid 2px;
 }
 .contact-form-layout .contact-lastname {
   padding: 7px 14px;
   grid-area: lastname;
 }
 .contact-form-layout .contact-lastname:focus {
-  outline: rgb(60, 255, 208) solid 2px;
+  outline: rgb(0, 240, 255) solid 2px;
 }
 .contact-form-layout .contact-message {
   padding: 7px 14px;
@@ -129,27 +130,21 @@ a {
   resize: none;
 }
 .contact-form-layout .contact-message:focus {
-  outline: rgb(60, 255, 208) solid 2px;
+  outline: rgb(0, 240, 255) solid 2px;
 }
 .contact-form-layout .contact-submit {
-  padding: 10px 15px;
-  border: 1px solid white;
+  padding: 1.25rem 4rem;
+  background-color: rgb(255, 0, 60);
   font-size: large;
   font-weight: bold;
   grid-area: submit;
-  transition-property: background-color, color;
-  transition: 0.2s ease-in;
-}
-.contact-form-layout .contact-submit:hover {
-  background-color: rgb(60, 255, 208);
-  color: rgb(50, 50, 50);
 }
 
 .login-form-layout {
   display: flex;
   gap: 1em;
   flex-direction: column;
-  border: 2px solid rgb(60, 255, 208);
+  border: 2px solid rgb(0, 240, 255);
   padding: 20px 50px;
 }
 .login-form-layout input {
@@ -195,7 +190,7 @@ a {
   transition: 0.2s ease-in;
 }
 .browse-menu li:hover {
-  background-color: rgb(60, 255, 208);
+  background-color: rgb(0, 240, 255);
   color: rgb(50, 50, 50);
 }
 
