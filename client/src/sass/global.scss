@@ -13,6 +13,11 @@ $desktop: 1025px;
 $tv: 1201px;
 
 // ** Colors ** //
+$yellow: rgb(248 239 0/1);
+$cyan: rgb(0 240 255/1);
+$red: rgb(255 0 60/1);
+$black: rgb(0 0 0/1);
+$white-gray: rgb(205 205 205/1);
 $green: rgb(60 255 208/1);
 $gray: rgb(148 148 148/1);
 
@@ -26,6 +31,11 @@ $gray: rgb(148 148 148/1);
   :root {
     --color-green: 60 255 208;
     --color-gray: 148 148 148;
+    --color-yellow: 248 239 0;
+    --color-cyan: 0 240 255;
+    --color-red: 255 0 60;
+    --color-black: 0 0 0;
+    --white-gray: 205 205 205;
   }
 }
 
@@ -82,24 +92,30 @@ a {
   }
 }
 
-.main-layout {
-  padding: 30px 150px 0px 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  height: 100%;
+.custom-container {
+  padding-left: 150px;
+  padding-right: 150px;
 
   @media(max-width: $tv) {
-    padding: 20px 96px 0px 96px;
+    padding-left: 96px;
+    padding-right: 96px;
   }
 
   @media(max-width: $desktop) {
-    padding: 20px 96px 0px 96px;
+    padding-left: 96px;
+    padding-right: 96px;
   }
 
   @media(max-width: $laptop) {
-    padding: 10px 48px 0px 48px;
+    padding-left: 48px;
+    padding-right: 48px;
   }
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contact-form-layout {

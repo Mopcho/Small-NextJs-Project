@@ -1,6 +1,6 @@
 export default function Browse() {
     return (
-      <section className="browse-layout">
+      <section className="browse-layout custom-container bg-custom-black">
         <div className="browse-menu">
             <li>Coding</li>
             <li>Cooking</li>

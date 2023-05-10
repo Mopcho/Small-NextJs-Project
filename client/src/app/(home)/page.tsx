@@ -5,11 +5,11 @@ import { ROUTE_LOGIN } from '@/constants/links';
 
 export default function Home() {
   return (
-    <section className="hero-layout">
+    <section className="hero-layout custom-container bg-custom-black">
       <main className='flex flex-col items-center gap-6'>
         <img src={HOMEPAGE_IMAGE.src} alt='hero' className="aspect-square rounded-xl h-[500px]"></img>
-        <h2 className='text-custom-green text-4xl break-keep text-center'>A blog worth browsing!</h2>
-        <Link href={`/${ROUTE_LOGIN}`} className='text-white text-2xl bg-blue-800 py-3 px-5 rounded-full font-bold hover:scale-110'>Login Now</Link>
+        <h2 className='text-custom-cyan text-4xl break-keep text-center'>A blog worth browsing!</h2>
+        <Link href={`/${ROUTE_LOGIN}`} className='text-2xl bg-custom-red text-white py-5 px-16 font-medium hover:scale-110 uppercase tracking-[.15em]'>Login Now</Link>
       </main>
       <aside className='flex flex-col gap-5'>
         <StoryCard />

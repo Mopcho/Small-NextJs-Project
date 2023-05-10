@@ -10,6 +10,11 @@
   :root {
     --color-green: 60 255 208;
     --color-gray: 148 148 148;
+    --color-yellow: 248 239 0;
+    --color-cyan: 0 240 255;
+    --color-red: 255 0 60;
+    --color-black: 0 0 0;
+    --white-gray: 205 205 205;
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -62,27 +67,33 @@ a {
   }
 }
 
-.main-layout {
-  padding: 30px 150px 0px 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  height: 100%;
+.custom-container {
+  padding-left: 150px;
+  padding-right: 150px;
 }
 @media (max-width: 1201px) {
-  .main-layout {
-    padding: 20px 96px 0px 96px;
+  .custom-container {
+    padding-left: 96px;
+    padding-right: 96px;
   }
 }
 @media (max-width: 1025px) {
-  .main-layout {
-    padding: 20px 96px 0px 96px;
+  .custom-container {
+    padding-left: 96px;
+    padding-right: 96px;
   }
 }
 @media (max-width: 769px) {
-  .main-layout {
-    padding: 10px 48px 0px 48px;
+  .custom-container {
+    padding-left: 48px;
+    padding-right: 48px;
   }
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contact-form-layout {

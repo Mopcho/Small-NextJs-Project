@@ -8,15 +8,15 @@ export default function HomeLayout({
 }) {
   return (
     <section className="main-layout">
-        <nav className="flex py-5 justify-end polysans-font">
-            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-white-400">
-                <MenuLink href={`/${ROUTE_HOME}`}>Home</MenuLink>
+        <nav className="flex justify-end polysans-font custom-container bg-custom-black py-10">
+            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-custom-cyan text-custom-cyan">
+                <MenuLink href={`/${ROUTE_HOME}`} additionalClassNames="text-custom-cyan">Home</MenuLink>
                 <p>/</p>
-                <MenuLink href={`/${ROUTE_CONTACT}`}>Contact</MenuLink>
+                <MenuLink href={`/${ROUTE_CONTACT}`} additionalClassNames="text-custom-cyan">Contact</MenuLink>
                 <p>/</p>
-                <MenuLink href={`/${ROUTE_BROWSE}`}>Blog</MenuLink>
+                <MenuLink href={`/${ROUTE_BROWSE}`} additionalClassNames="text-custom-cyan">Blog</MenuLink>
                 <p>/</p>
-                <MenuLink href={`/${ROUTE_LOGIN}`}>Login</MenuLink>
+                <MenuLink href={`/${ROUTE_LOGIN}`} additionalClassNames="text-custom-cyan">Login</MenuLink>
             </ul>
         </nav>
         {children}
