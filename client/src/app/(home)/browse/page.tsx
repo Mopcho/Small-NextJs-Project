@@ -2,7 +2,7 @@ export default function Browse() {
     return (
       <section className="browse-layout custom-container bg-custom-black">
         <div className="browse-menu">
-            <li>Coding</li>
+            <li className="browse-selected-category">Coding</li>
             <li>Cooking</li>
             <li>Anime</li>
         </div>

@@ -194,4 +194,9 @@ a {
   color: rgb(50, 50, 50);
 }
 
+.browse-selected-category {
+  background-color: rgb(0, 240, 255);
+  color: rgb(0, 0, 0);
+}
+
 /*# sourceMappingURL=global.css.map */
