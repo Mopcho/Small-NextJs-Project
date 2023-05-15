@@ -10,7 +10,7 @@
   :root {
     --color-green: 60 255 208;
     --color-gray: 148 148 148;
-    --color-yellow: 248 239 0;
+    --color-yellow: 248 239 0 ;
     --color-cyan: 0 240 255;
     --color-red: 255 0 60;
     --color-black: 0 0 0;
@@ -115,14 +115,14 @@ a {
   grid-area: firstname;
 }
 .contact-form-layout .contact-firstname:focus {
-  outline: rgb(0, 240, 255) solid 2px;
+  outline: 0 240 255 solid 2px;
 }
 .contact-form-layout .contact-lastname {
   padding: 7px 14px;
   grid-area: lastname;
 }
 .contact-form-layout .contact-lastname:focus {
-  outline: rgb(0, 240, 255) solid 2px;
+  outline: 0 240 255 solid 2px;
 }
 .contact-form-layout .contact-message {
   padding: 7px 14px;
@@ -130,11 +130,11 @@ a {
   resize: none;
 }
 .contact-form-layout .contact-message:focus {
-  outline: rgb(0, 240, 255) solid 2px;
+  outline: 0 240 255 solid 2px;
 }
 .contact-form-layout .contact-submit {
   padding: 1.25rem 4rem;
-  background-color: rgb(255, 0, 60);
+  background-color: 255 0 60;
   font-size: large;
   font-weight: bold;
   grid-area: submit;
@@ -144,14 +144,14 @@ a {
   display: flex;
   gap: 1em;
   flex-direction: column;
-  border: 2px solid rgb(0, 240, 255);
+  border: 2px solid 0 240 255;
   padding: 20px 50px;
 }
 .login-form-layout input {
   padding: 10px 15px;
 }
 .login-form-layout input:focus {
-  outline: rgb(60, 255, 208) solid 2px;
+  outline: 60 255 208 solid 2px;
 }
 .login-form-layout a {
   text-decoration: 1px solid underline;
@@ -167,7 +167,7 @@ a {
   transition: 0.2s ease-in;
 }
 .login-form-layout button:hover {
-  background-color: rgb(60, 255, 208);
+  background-color: 60 255 208;
   color: rgb(50, 50, 50);
 }
 
@@ -190,13 +190,13 @@ a {
   transition: 0.2s ease-in;
 }
 .browse-menu li:hover {
-  background-color: rgb(0, 240, 255);
+  background-color: 0 240 255;
   color: rgb(50, 50, 50);
 }
 
 .browse-selected-category {
-  background-color: rgb(0, 240, 255);
-  color: rgb(0, 0, 0);
+  background-color: 0 240 255;
+  color: 0 0 0;
 }
 
 /*# sourceMappingURL=global.css.map */

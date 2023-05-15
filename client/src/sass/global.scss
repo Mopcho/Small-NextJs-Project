@@ -13,13 +13,13 @@ $desktop: 1025px;
 $tv: 1201px;
 
 // ** Colors ** //
-$yellow: rgb(248 239 0/1);
-$cyan: rgb(0 240 255/1);
-$red: rgb(255 0 60/1);
-$black: rgb(0 0 0/1);
-$white-gray: rgb(205 205 205/1);
-$green: rgb(60 255 208/1);
-$gray: rgb(148 148 148/1);
+$yellow: 248 239 0;
+$cyan: 0 240 255;
+$red: 255 0 60;
+$black: 0 0 0;
+$white-gray: 205 205 205;
+$green: 60 255 208;
+$gray: 148 148 148;
 
 
 @font-face {
@@ -29,13 +29,13 @@ $gray: rgb(148 148 148/1);
 
 @layer base {
   :root {
-    --color-green: 60 255 208;
-    --color-gray: 148 148 148;
-    --color-yellow: 248 239 0;
-    --color-cyan: 0 240 255;
-    --color-red: 255 0 60;
-    --color-black: 0 0 0;
-    --white-gray: 205 205 205;
+    --color-green: #{$green};
+    --color-gray: #{$gray};
+    --color-yellow: #{$yellow} ;
+    --color-cyan: #{$cyan};
+    --color-red: #{$red};
+    --color-black: #{$black};
+    --white-gray: #{$white-gray};
   }
 }
 
