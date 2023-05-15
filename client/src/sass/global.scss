@@ -241,3 +241,32 @@ a {
   background-color: $cyan;
   color: $black;
 }
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.browse-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem 0rem;
+
+  @media(max-width: $desktop) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media(max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  
+  @media(max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
