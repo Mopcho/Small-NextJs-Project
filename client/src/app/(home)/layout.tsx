@@ -40,10 +40,10 @@ export default function HomeLayout({
   return (
     <section className="main-layout">
         <Navigation />
-        <div className="icon-wrapper bg-custom-black py-5 px-5">
+        {isHamburgerOpen ? null : <div className="icon-wrapper bg-custom-black py-5 px-5">
           <Menu size="48" color="white" className="float-right" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}/>
-        </div>
-        {isHamburgerOpen ? (<HamburgerNavigation />) : null}
+        </div>}
+        {isHamburgerOpen ? (<HamburgerNavigation close={() => setIsHamburgerOpen(false)}/>) : null}
         {children}
     </section>
   )
