@@ -213,6 +213,12 @@ a {
   border-bottom: 1px solid white;
   padding: 20px 10px;
 }
+@media (max-width: 481px) {
+  .browse-menu {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .browse-menu li {
   cursor: pointer;
   list-style: none;
