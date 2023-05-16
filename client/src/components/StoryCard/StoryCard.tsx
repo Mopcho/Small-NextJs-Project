@@ -1,6 +1,6 @@
 import IMAGE from '../../public/images/homepage-image.jpg';
 
-export const StoryCard: React.FC = () => {
+export const StoryCard = (): JSX.Element => {
     return (
         <div className="storycard">
             <div>

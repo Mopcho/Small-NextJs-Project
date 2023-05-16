@@ -7,9 +7,9 @@ interface MenuLinkProps {
     additionalClassNames?: string,
 }
 
-export const MenuLink = ({href, children, additionalClassNames}: MenuLinkProps) => {
+export const MenuLink = ({href, children, additionalClassNames}: MenuLinkProps): JSX.Element => {
     return (
-        <Link href={href} className={classNames('hover:scale-110', additionalClassNames)}>
+        <Link href={href} className={classNames(additionalClassNames)}>
             {children}
         </Link>
     )

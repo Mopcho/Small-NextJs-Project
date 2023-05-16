@@ -1,24 +1,49 @@
-import { MenuLink } from "@/components/MenuLink/MenuLink";
-import { ROUTE_BROWSE, ROUTE_CONTACT, ROUTE_HOME, ROUTE_LOGIN } from "@/constants/links";
+'use client'
+import { HamburgerNavigation } from "@/components/HamburgerNavigation/HamburgerNavigation";
+import { Navigation } from "@/components/Navigation/Navigation";
+import { useBreakpoints } from "@/hooks/useBreakpoints";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { Menu } from "react-feather";
 
 export default function HomeLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  // Hamburger menu handling
+  // TODO: Maybe make it a custom hook
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+  const { breakpoints } = useBreakpoints();
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize({width: window.innerWidth, height: window.innerHeight});
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowSize.width >= breakpoints.tablet) {
+      setIsHamburgerOpen(false);
+    }
+  }, [windowSize]);
+
   return (
     <section className="main-layout">
-        <nav className="flex justify-end polysans-font custom-container bg-custom-black py-10">
-            <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-custom-cyan text-custom-cyan">
-                <MenuLink href={`/${ROUTE_HOME}`} additionalClassNames="text-custom-cyan">Home</MenuLink>
-                <p>/</p>
-                <MenuLink href={`/${ROUTE_CONTACT}`} additionalClassNames="text-custom-cyan">Contact</MenuLink>
-                <p>/</p>
-                <MenuLink href={`/${ROUTE_BROWSE}`} additionalClassNames="text-custom-cyan">Blog</MenuLink>
-                <p>/</p>
-                <MenuLink href={`/${ROUTE_LOGIN}`} additionalClassNames="text-custom-cyan">Login</MenuLink>
-            </ul>
-        </nav>
+        <Navigation />
+        <div className="icon-wrapper bg-custom-black py-5 px-5">
+          <Menu size="48" color="white" className="float-right" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}/>
+        </div>
+        {isHamburgerOpen ? (<HamburgerNavigation />) : null}
         {children}
     </section>
   )

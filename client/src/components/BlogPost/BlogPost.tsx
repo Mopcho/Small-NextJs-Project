@@ -1,6 +1,6 @@
 import IMAGE from '../../public/images/homepage-image.jpg';
 
-export const BlogPost: React.FC = () => {
+export const BlogPost = (): JSX.Element => {
     return (
         <div className="blog-post">
             <a className='cursor-pointer rounded-2xl overflow-hidden max-w-max'>

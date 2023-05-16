@@ -13,6 +13,7 @@ module.exports = {
         "custom-red": 'rgb(var(--color-red) / <alpha-value>)',
         "custom-black": 'rgb(var(--color-black) / <alpha-value>)',
         "custom-white-gray": 'rgb(var(--color-white-gray) / <alpha-value>)',
+        "custom-pale-blue": 'rgb(var(--color-pale-blue) / <alpha-value>)',
       }
     },
   },
