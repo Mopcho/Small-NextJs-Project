@@ -271,8 +271,8 @@ a {
     transition: 0.2s ease-in;
 
     &:hover {
-      background-color: $cyan;
-      color: rgb(50, 50, 50);
+      background-color: rgb($red);
+      color: white;
     }
   }
 }

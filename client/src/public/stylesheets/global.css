@@ -230,8 +230,8 @@ a {
   transition: 0.2s ease-in;
 }
 .browse-menu li:hover {
-  background-color: 0 240 255;
-  color: rgb(50, 50, 50);
+  background-color: rgb(255, 0, 60);
+  color: white;
 }
 
 .browse-selected-category {

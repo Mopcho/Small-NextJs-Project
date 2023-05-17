@@ -4,7 +4,7 @@ export default function Browse() {
   return (
     <section className="browse-layout custom-container bg-custom-black">
       <div className="browse-menu">
-        <li className="browse-selected-category">Coding</li>
+        <li>Coding</li>
         <li>Cooking</li>
         <li>Anime</li>
       </div>
