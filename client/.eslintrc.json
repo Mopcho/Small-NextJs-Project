@@ -20,6 +20,7 @@
   },
   "rules": {
     "quotes" : ["error", "single"],
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "no-console": [2, {"allow": ["warn", "error"]}],

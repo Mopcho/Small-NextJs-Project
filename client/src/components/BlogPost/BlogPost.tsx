@@ -1,11 +1,10 @@
-import Image from 'next/image';
 import IMAGE from '../../public/images/homepage-image.jpg';
 
 export const BlogPost = (): JSX.Element => {
   return (
     <div className="blog-post">
       <div className="cursor-pointer rounded-2xl overflow-hidden max-w-max">
-        <Image src={IMAGE.src} alt="just" className="max-h-[150px]" />
+        <img src={IMAGE.src} alt="just" className="max-h-[150px]" />
       </div>
       <div>
         <a

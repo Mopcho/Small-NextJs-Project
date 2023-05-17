@@ -14,20 +14,27 @@ export default function HomeLayout({
   // Hamburger menu handling
   // TODO: Maybe make it a custom hook
   const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0,
+    height: 0,
   });
   const { breakpoints } = useBreakpoints();
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      if (typeof window !== 'undefined') {
+        setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+      }
     };
-
-    window.addEventListener('resize', handleWindowResize);
+    if (typeof window !== 'undefined') {
+      // browser code
+      window.addEventListener('resize', handleWindowResize);
+    }
 
     return () => {
-      window.removeEventListener('resize', handleWindowResize);
+      if (typeof window !== 'undefined') {
+        // browser code
+        window.removeEventListener('resize', handleWindowResize);
+      }
     };
   }, []);
 

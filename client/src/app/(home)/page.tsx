@@ -2,17 +2,16 @@ import { StoryCard } from '@/components/StoryCard/StoryCard';
 import HOMEPAGE_IMAGE from '../../public/images/homepage-image.jpg';
 import Link from 'next/link';
 import { ROUTE_LOGIN } from '@/constants/links';
-import Image from 'next/image';
 
 export default function Home() {
   return (
     <section className="hero-layout custom-container bg-custom-black">
       <main className="flex flex-col items-center gap-6">
-        <Image
+        <img
           src={HOMEPAGE_IMAGE.src}
           alt="hero"
           className="aspect-square rounded-xl h-[500px]"
-        ></Image>
+        ></img>
         <h2 className="text-custom-cyan text-4xl break-keep text-center">
           A blog worth browsing!
         </h2>

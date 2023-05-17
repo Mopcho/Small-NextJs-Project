@@ -12,6 +12,7 @@ export default function Login() {
             placeholder="Email..."
             name="email"
             type="email"
+            autoComplete="username"
           ></input>
         </label>
         <label htmlFor="password" className="flex flex-col">
@@ -22,6 +23,7 @@ export default function Login() {
             placeholder="Password..."
             name="password"
             type="password"
+            autoComplete="current-password"
           ></input>
         </label>
         <button className="login-submit">Login</button>
