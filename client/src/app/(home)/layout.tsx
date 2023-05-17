@@ -1,14 +1,14 @@
-'use client'
-import { HamburgerNavigation } from "@/components/HamburgerNavigation/HamburgerNavigation";
-import { Navigation } from "@/components/Navigation/Navigation";
-import { useBreakpoints } from "@/hooks/useBreakpoints";
-import { useEffect, useState, useSyncExternalStore } from "react";
-import { Menu } from "react-feather";
+'use client';
+import { HamburgerNavigation } from '@/components/HamburgerNavigation/HamburgerNavigation';
+import { Navigation } from '@/components/Navigation/Navigation';
+import { useBreakpoints } from '@/hooks/useBreakpoints';
+import { useEffect, useState } from 'react';
+import { Menu } from 'react-feather';
 
 export default function HomeLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   // Hamburger menu handling
@@ -21,7 +21,7 @@ export default function HomeLayout({
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setWindowSize({width: window.innerWidth, height: window.innerHeight});
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
 
     window.addEventListener('resize', handleWindowResize);
@@ -35,16 +35,25 @@ export default function HomeLayout({
     if (windowSize.width >= breakpoints.tablet) {
       setIsHamburgerOpen(false);
     }
-  }, [windowSize]);
+  }, [windowSize, breakpoints.tablet]);
 
   return (
     <section className="main-layout">
-        <Navigation />
-        {isHamburgerOpen ? null : <div className="icon-wrapper bg-custom-black py-5 px-5">
-          <Menu size="48" color="white" className="float-right" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}/>
-        </div>}
-        {isHamburgerOpen ? (<HamburgerNavigation close={() => setIsHamburgerOpen(false)}/>) : null}
-        {children}
+      <Navigation />
+      {isHamburgerOpen ? null : (
+        <div className="icon-wrapper bg-custom-black py-5 px-5">
+          <Menu
+            size="48"
+            color="white"
+            className="float-right"
+            onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+          />
+        </div>
+      )}
+      {isHamburgerOpen ? (
+        <HamburgerNavigation close={() => setIsHamburgerOpen(false)} />
+      ) : null}
+      {children}
     </section>
-  )
+  );
 }
