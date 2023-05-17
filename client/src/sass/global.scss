@@ -204,8 +204,8 @@ a {
 
   .contact-submit {
     padding: 1.25rem 4rem;
-    background-color: $red;
-    font-size: large;
+    background-color: rgb($red);
+    font-size: x-large;
     font-weight: bold;
     grid-area: submit;
   }

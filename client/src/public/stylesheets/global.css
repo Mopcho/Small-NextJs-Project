@@ -168,8 +168,8 @@ a {
 }
 .contact-form-layout .contact-submit {
   padding: 1.25rem 4rem;
-  background-color: 255 0 60;
-  font-size: large;
+  background-color: rgb(255, 0, 60);
+  font-size: x-large;
   font-weight: bold;
   grid-area: submit;
 }
