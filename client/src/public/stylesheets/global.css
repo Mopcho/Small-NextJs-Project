@@ -269,4 +269,45 @@ a {
   }
 }
 
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admin-navigation ul {
+  display: flex;
+  justify-content: center;
+}
+.admin-navigation a {
+  font-size: xx-large;
+}
+
+.blog-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.blog-create-form input:focus, .blog-create-form textarea:focus {
+  outline: 2px solid rgb(0, 240, 255);
+}
+.blog-create-form .blog-create-formfield {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.blog-create-form .blog-create-title {
+  flex-grow: 1;
+  width: 30%;
+}
+.blog-create-form .blog-create-textarea {
+  flex-grow: 4;
+  width: 100%;
+}
+
 /*# sourceMappingURL=global.css.map */

@@ -309,3 +309,52 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.admin-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.admin-navigation {
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  a {
+    font-size: xx-large;
+  }
+}
+
+.blog-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  input:focus, textarea:focus {
+    outline: 2px solid rgb($cyan);
+  }
+
+  .blog-create-formfield {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .blog-create-title {
+    flex-grow: 1;
+    width: 30%;
+  }
+
+  .blog-create-textarea {
+    flex-grow: 4;
+    width: 100%;
+  }
+}
