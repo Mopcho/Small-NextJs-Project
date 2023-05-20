@@ -1,26 +1,27 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import 'react-quill/dist/quill.snow.css';
+
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+
 export default function Create() {
+  const [value, setValue] = useState('');
   return (
     <section className="h-full w-full py-8">
       <form className="blog-create-form">
-        <div className="blog-create-title blog-create-formfield">
-          <label htmlFor="title" className="text-3xl">
-            Title
-          </label>
-          <input name="title" type="text" className="w-full p-2"></input>
-        </div>
+        <input
+          name="title"
+          type="text"
+          placeholder="Title..."
+          className="py-3 text-2xl px-3 text-center"
+        ></input>
 
-        <div className="blog-create-textarea blog-create-formfield">
-          <label htmlFor="content" className="text-3xl">
-            Content
-          </label>
-          <textarea
-            name="content"
-            className="w-full p-2 h-full resize-none"
-          ></textarea>
-        </div>
+        <ReactQuill value={value} onChange={setValue} />
 
         <button className="py-3 px-10 bg-custom-red text-white text-2xl">
-          Review
+          Submit
         </button>
       </form>
     </section>

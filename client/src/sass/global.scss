@@ -330,31 +330,10 @@ a {
 
 .blog-create-form {
   display: flex;
-  flex-direction: column;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+  flex-flow: column;
+  gap: 2em;
 
-  input:focus, textarea:focus {
+  input:focus {
     outline: 2px solid rgb($cyan);
-  }
-
-  .blog-create-formfield {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .blog-create-title {
-    flex-grow: 1;
-    width: 30%;
-  }
-
-  .blog-create-textarea {
-    flex-grow: 4;
-    width: 100%;
   }
 }

@@ -285,29 +285,11 @@ a {
 
 .blog-create-form {
   display: flex;
-  flex-direction: column;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
+  flex-flow: column;
+  gap: 2em;
 }
-.blog-create-form input:focus, .blog-create-form textarea:focus {
+.blog-create-form input:focus {
   outline: 2px solid rgb(0, 240, 255);
-}
-.blog-create-form .blog-create-formfield {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-.blog-create-form .blog-create-title {
-  flex-grow: 1;
-  width: 30%;
-}
-.blog-create-form .blog-create-textarea {
-  flex-grow: 4;
-  width: 100%;
 }
 
 /*# sourceMappingURL=global.css.map */
