@@ -1,10 +1,6 @@
-import {
-  ROUTE_BROWSE,
-  ROUTE_CONTACT,
-  ROUTE_HOME,
-  ROUTE_LOGIN,
-} from '@/constants/links';
+import { ROUTE_BROWSE, ROUTE_CONTACT, ROUTE_HOME } from '@/constants/links';
 import { MenuLink } from '../MenuLink/MenuLink';
+import { signIn } from 'next-auth/react';
 
 export const Navigation = (): JSX.Element => {
   return (
@@ -31,12 +27,9 @@ export const Navigation = (): JSX.Element => {
           Blog
         </MenuLink>
         <p>/</p>
-        <MenuLink
-          href={`/${ROUTE_LOGIN}`}
-          additionalClassNames="text-custom-cyan"
-        >
-          Login
-        </MenuLink>
+        <button className="text-custom-cyan" onClick={() => signIn()}>
+          Sign In
+        </button>
       </ul>
     </nav>
   );

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import '../public/stylesheets/global.css';
+import { NextAuthProvider } from './providers';
 
 export const metadata = {
   title: 'CyberBlog',
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NextAuthProvider>{children}</NextAuthProvider>
+      </body>
     </html>
   );
 }
