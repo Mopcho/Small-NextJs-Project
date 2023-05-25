@@ -1,6 +1,7 @@
 'use client';
 
 import { SignInButton } from '@/components/Buttons/SignIn';
+import Spinner from '@/components/Spinner/Spinner';
 import {
   validateEmail,
   validateName,
@@ -162,11 +163,15 @@ export default function Register() {
           )}
         </label>
         <button
-          className="login-submit"
+          className="login-submit flex justify-center items-center"
           type="submit"
           disabled={formik.isSubmitting}
         >
-          Register
+          {formik.isSubmitting ? (
+            <Spinner className="h-10 w-10"></Spinner>
+          ) : (
+            'Register'
+          )}
         </button>
         <SignInButton>Already have an account ? Sign in now !</SignInButton>
       </form>
