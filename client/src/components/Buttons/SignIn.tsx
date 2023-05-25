@@ -2,10 +2,15 @@
 
 import { signIn } from 'next-auth/react';
 
-export const SignInButton = ({ className }: { className?: string }) => {
+interface Props {
+  className?: string;
+  children?: JSX.Element | string;
+}
+
+export const SignInButton: React.FC<Props> = ({ className, children }) => {
   return (
     <button onClick={() => signIn()} className={className}>
-      Already have an account ? Sign in now !
+      {children}
     </button>
   );
 };
