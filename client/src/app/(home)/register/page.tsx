@@ -7,6 +7,7 @@ import {
   validatePassword,
   validateRepeatPassword,
 } from '@/lib/validations';
+import classNames from 'classnames';
 import { FormikErrors, FormikValues, useFormik } from 'formik';
 import { signIn } from 'next-auth/react';
 
@@ -79,7 +80,10 @@ export default function Register() {
         <label htmlFor="email" className="flex flex-col">
           Name
           <input
-            className="login-name"
+            className={classNames(
+              'login-name',
+              formik.errors.name && formik.touched.name ? 'error-input' : null
+            )}
             placeholder="Name..."
             name="name"
             type="text"
@@ -95,7 +99,10 @@ export default function Register() {
         <label htmlFor="email" className="flex flex-col">
           Email
           <input
-            className="login-email"
+            className={classNames(
+              'login-email',
+              formik.errors.email && formik.touched.email ? 'error-input' : null
+            )}
             placeholder="Email..."
             name="email"
             type="email"
@@ -112,7 +119,12 @@ export default function Register() {
           {' '}
           Password
           <input
-            className="login-password"
+            className={classNames(
+              'login-password',
+              formik.errors.password && formik.touched.password
+                ? 'error-input'
+                : null
+            )}
             placeholder="Password..."
             name="password"
             type="password"
@@ -129,7 +141,12 @@ export default function Register() {
           {' '}
           Repeat Password
           <input
-            className="login-repeatPassword"
+            className={classNames(
+              'login-repeatPassword',
+              formik.errors.repeatPassword && formik.touched.repeatPassword
+                ? 'error-input'
+                : null
+            )}
             placeholder="Password..."
             name="repeatPassword"
             type="password"
@@ -144,7 +161,11 @@ export default function Register() {
             </span>
           )}
         </label>
-        <button className="login-submit" type="submit">
+        <button
+          className="login-submit"
+          type="submit"
+          disabled={formik.isSubmitting}
+        >
           Register
         </button>
         <SignInButton>Already have an account ? Sign in now !</SignInButton>
