@@ -7,13 +7,11 @@ import {
 import { MenuLink } from '../MenuLink/MenuLink';
 import { Home, Phone, Globe, LogIn, X } from 'react-feather';
 
-interface HamburgerNavigationProps {
+interface HamburgerLinksProps {
   close: () => void;
 }
 
-export const HamburgerNavigation = ({
-  close,
-}: HamburgerNavigationProps): JSX.Element => {
+export const HamburgerLinks = ({ close }: HamburgerLinksProps): JSX.Element => {
   return (
     <nav className="hamburger-nav w-3/4 absolute left-0 h-screen bg-white">
       <ul className="flex flex-col gap-2 px-7 py-5 overflow-visible">

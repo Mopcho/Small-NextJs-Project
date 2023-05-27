@@ -1,5 +1,6 @@
 'use client';
 import { validateBlogContent, validateBlogTitle } from '@/lib/validations';
+import { useSession } from 'next-auth/react';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Range } from 'react-quill';
@@ -8,6 +9,7 @@ import 'react-quill/dist/quill.snow.css';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 export default function Create() {
+  const { data: session } = useSession();
   const [formValues, setValues] = useState({
     title: '',
     content: '',
@@ -49,6 +51,8 @@ export default function Create() {
   const handleChange = (ev: React.FormEvent<HTMLInputElement>) => {
     const value = ev.currentTarget.value;
     const name = ev.currentTarget.name;
+
+    console.warn(session);
 
     setValues((prevValues) => {
       const updatedValues = { ...prevValues, [name]: value };

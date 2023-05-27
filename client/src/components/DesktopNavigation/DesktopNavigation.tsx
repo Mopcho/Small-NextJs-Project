@@ -5,9 +5,13 @@ import {
   ROUTE_REGISTER,
 } from '@/constants/links';
 import { MenuLink } from '../MenuLink/MenuLink';
-import { signIn } from 'next-auth/react';
+import { SignInButton } from '../Buttons/SignIn';
+import { SignOutButton } from '../Buttons/SignOut';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 
-export const Navigation = (): JSX.Element => {
+export const DesktopNavigation = async (): Promise<JSX.Element> => {
+  const session = await getServerSession(authOptions);
   return (
     <nav className="main-nav flex justify-end polysans-font custom-container bg-custom-black py-10">
       <ul className="flex gap-4 text-2xl justify-center items-center justify-items-center border-b-2 pb-4 border-custom-cyan text-custom-cyan">
@@ -32,16 +36,27 @@ export const Navigation = (): JSX.Element => {
           Blog
         </MenuLink>
         <p>/</p>
-        <button className="text-custom-cyan" onClick={() => signIn()}>
-          Sign In
-        </button>
-        <p>/</p>
-        <MenuLink
-          href={`/${ROUTE_REGISTER}`}
-          additionalClassNames="text-custom-cyan"
-        >
-          Register
-        </MenuLink>
+        {!session?.user && (
+          <>
+            <SignInButton>Login</SignInButton>
+            <p>/</p>
+          </>
+        )}
+        {session?.user && (
+          <>
+            <SignOutButton>Logout</SignOutButton>
+          </>
+        )}
+        {!session?.user && (
+          <>
+            <MenuLink
+              href={`/${ROUTE_REGISTER}`}
+              additionalClassNames="text-custom-cyan"
+            >
+              Register
+            </MenuLink>
+          </>
+        )}
       </ul>
     </nav>
   );

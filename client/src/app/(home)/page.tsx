@@ -3,7 +3,7 @@ import HOMEPAGE_IMAGE from '../../public/images/homepage-image.jpg';
 import Link from 'next/link';
 import { ROUTE_LOGIN } from '@/constants/links';
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className="hero-layout custom-container bg-custom-black">
       <main className="flex flex-col items-center gap-6">
