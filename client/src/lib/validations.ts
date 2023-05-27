@@ -34,3 +34,15 @@ export const validateRepeatPassword = (
     return 'Password must match Repeat Password';
   }
 };
+
+export const validateBlogTitle = (title: string): string | undefined => {
+  if (!title || title.length < 8) {
+    return 'Title must be at least 8 characters long';
+  }
+};
+
+export const validateBlogContent = (content: string): string | undefined => {
+  if (!content || content.length < 100) {
+    return 'Title must be at least 100 characters long';
+  }
+};
