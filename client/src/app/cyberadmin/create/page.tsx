@@ -1,5 +1,5 @@
 'use client';
-import { validateBlogTitle } from '@/lib/validations';
+import { validateBlogContent, validateBlogTitle } from '@/lib/validations';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Range } from 'react-quill';
@@ -34,7 +34,7 @@ export default function Create() {
       errors.title = titleError;
     }
 
-    const blogContentError = validateBlogTitle(values.content);
+    const blogContentError = validateBlogContent(values.content);
     if (blogContentError) {
       errors.content = blogContentError;
     }
@@ -58,10 +58,13 @@ export default function Create() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (ev: React.FormEvent) => {
+    ev.preventDefault();
     console.warn(formValues);
     console.warn(formErrors);
     console.warn(touched);
+
+    // TODO: Send to server
   };
 
   /**
@@ -76,11 +79,17 @@ export default function Create() {
 
   // Because they have to be special >:(
   const handleQuillChange = (values: string) => {
-    console.warn(values);
+    setValues((prevValues) => {
+      const updatedValues = { ...prevValues, content: values };
+      const errors = validate(updatedValues);
+      setErrors(errors);
+      return updatedValues;
+    });
   };
 
   const handleQuillBlur = (previousSelection: Range) => {
     console.warn(previousSelection);
+    setTouched({ ...touched, content: true });
   };
 
   return (
@@ -103,8 +112,23 @@ export default function Create() {
           value={formValues.content}
           onChange={handleQuillChange}
           onBlur={handleQuillBlur}
+          modules={{
+            toolbar: {
+              container: [
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                ['bold', 'italic', 'underline'],
+                [{ list: 'ordered' }, { list: 'bullet' }],
+                [{ align: [] }],
+                // ['link', 'image'],
+                ['clean'],
+                [{ color: [] }],
+              ],
+            },
+          }}
         />
-        {touched.content && <span>{formErrors.content}</span>}
+        {touched.content && (
+          <span className="text-custom-red">{formErrors.content}</span>
+        )}
 
         <button
           type="submit"
