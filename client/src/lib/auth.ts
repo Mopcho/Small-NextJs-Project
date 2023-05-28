@@ -37,14 +37,13 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
           email: user.email,
           name: user.name,
-          randomKey: 'Hey cool',
         };
       },
     }),
   ],
   callbacks: {
     session: ({ session, token }) => {
-      console.log('Session Callback', { session, token });
+      console.warn('Session Callback', { session, token });
       return {
         ...session,
         user: {
@@ -54,13 +53,12 @@ export const authOptions: NextAuthOptions = {
       };
     },
     jwt: ({ token, user }) => {
-      console.log('JWT Callback', { token, user });
+      console.warn('JWT Callback', { token, user });
       if (user) {
         const u = user as unknown as any;
         return {
           ...token,
           id: u.id,
-          randomKey: u.randomKey,
         };
       }
       return token;
