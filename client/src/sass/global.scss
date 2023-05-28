@@ -357,3 +357,16 @@ a {
     }
   } 
 }
+
+.browse-loader {
+  border: 1px solid rgb($white-gray);
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: xx-large;
+
+  &:hover {
+    color: white;
+    background-color: rgb($red);
+  }
+}

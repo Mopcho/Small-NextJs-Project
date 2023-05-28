@@ -311,4 +311,16 @@ a {
   }
 }
 
+.browse-loader {
+  border: 1px solid rgb(205, 205, 205);
+  padding: 20px 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: xx-large;
+}
+.browse-loader:hover {
+  color: white;
+  background-color: rgb(255, 0, 60);
+}
+
 /*# sourceMappingURL=global.css.map */

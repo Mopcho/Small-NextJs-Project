@@ -1,4 +1,4 @@
-import { BlogPost } from '@/components/BlogPost/BlogPost';
+import { BLogPage } from '@/components/BlogPage/BlogPage';
 
 export default function Browse() {
   return (
@@ -8,22 +8,7 @@ export default function Browse() {
         <li>Cooking</li>
         <li>Anime</li>
       </div>
-      <div className="browse-content">
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-        <BlogPost></BlogPost>
-      </div>
+      <BLogPage></BLogPage>
     </section>
   );
 }
