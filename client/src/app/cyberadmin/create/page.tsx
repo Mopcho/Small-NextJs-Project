@@ -2,14 +2,15 @@
 import { validateBlogContent, validateBlogTitle } from '@/lib/validations';
 import { useSession } from 'next-auth/react';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Range } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 export default function Create() {
   const { data: session } = useSession();
+  const { push } = useRouter();
   const [formValues, setValues] = useState({
     title: '',
     content: '',
@@ -44,15 +45,9 @@ export default function Create() {
     return errors;
   };
 
-  /**
-   * 1. Set values
-   * 2. Set errors
-   */
   const handleChange = (ev: React.FormEvent<HTMLInputElement>) => {
     const value = ev.currentTarget.value;
     const name = ev.currentTarget.name;
-
-    console.warn(session);
 
     setValues((prevValues) => {
       const updatedValues = { ...prevValues, [name]: value };
@@ -62,13 +57,23 @@ export default function Create() {
     });
   };
 
-  const handleSubmit = (ev: React.FormEvent) => {
+  const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault();
-    console.warn(formValues);
-    console.warn(formErrors);
-    console.warn(touched);
 
-    // TODO: Send to server
+    const res = await fetch('/api/blogs/create', {
+      method: 'POST',
+      body: JSON.stringify({ ...formValues, userId: session?.user?.userId }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!res.ok) {
+      alert((await res.json()).message);
+      return;
+    }
+
+    push('/');
   };
 
   /**
@@ -91,8 +96,7 @@ export default function Create() {
     });
   };
 
-  const handleQuillBlur = (previousSelection: Range) => {
-    console.warn(previousSelection);
+  const handleQuillBlur = () => {
     setTouched({ ...touched, content: true });
   };
 
@@ -108,9 +112,9 @@ export default function Create() {
           onChange={handleChange}
           onBlur={handleBlur}
         ></input>
-        {touched.title && (
+        {touched.title && formErrors.title ? (
           <span className="text-custom-red">{formErrors.title}</span>
-        )}
+        ) : null}
 
         <ReactQuill
           value={formValues.content}
@@ -130,9 +134,9 @@ export default function Create() {
             },
           }}
         />
-        {touched.content && (
+        {touched.content && formErrors.content ? (
           <span className="text-custom-red">{formErrors.content}</span>
-        )}
+        ) : null}
 
         <button
           type="submit"
