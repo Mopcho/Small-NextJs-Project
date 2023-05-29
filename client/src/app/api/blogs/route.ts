@@ -15,13 +15,19 @@ export async function GET(req: NextRequest) {
     const blogs = await prisma.blog.findMany({
       where: {},
       skip: skip || 0,
-      take: pageSize || 9,
+      take: pageSize,
       include: {
         user: true,
       },
     });
 
-    return NextResponse.json({ blogs, page, pageSize });
+    const totalHits = await prisma.blog.count({
+      where: {},
+    });
+
+    const isLastPage = totalHits <= pageSize * page;
+
+    return NextResponse.json({ blogs, page, pageSize, isLastPage });
   } catch (err) {
     console.error(err);
   }

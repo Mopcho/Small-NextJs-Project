@@ -5,12 +5,12 @@ import { BlogPost } from '../BlogPost/BlogPost';
 import axios from 'axios';
 import { IBlogPost } from '@/lib/types';
 import { format } from 'date-fns';
-import classNames from 'classnames';
 
 export const BLogPage = (): JSX.Element => {
   const [pagination, setPagination] = useState({
     page: 1,
-    pageSize: 9,
+    pageSize: 3,
+    isLastPage: false,
   });
 
   const [posts, setPosts] = useState<IBlogPost[]>([]);
@@ -26,6 +26,7 @@ export const BLogPage = (): JSX.Element => {
         )
         .then((res) => {
           setPosts(res.data.blogs);
+          setPagination({ ...pagination, isLastPage: res.data.isLastPage });
         });
     } catch (err) {
       console.error(err);
@@ -41,10 +42,13 @@ export const BLogPage = (): JSX.Element => {
       );
 
       const blogs: IBlogPost[] = response.data.blogs;
+      const isLastPage: boolean = response.data.isLastPage;
+
+      console.warn(response.data);
 
       setPosts([...posts, ...blogs]);
 
-      setPagination({ ...pagination, page: pagination.page + 1 });
+      setPagination({ ...pagination, page: pagination.page + 1, isLastPage });
     } catch (err) {
       console.error(err);
     }
@@ -66,9 +70,15 @@ export const BLogPage = (): JSX.Element => {
           ></BlogPost>
         ))}
       </div>
-      <button className="browse-loader" onClick={handleLoadMore}>
-        Load More
-      </button>
+      {pagination.isLastPage ? (
+        <h1 className="w-full text-4xl text-center my-4">
+          You have reached the end...
+        </h1>
+      ) : (
+        <button className="browse-loader" onClick={handleLoadMore}>
+          Load More
+        </button>
+      )}
     </>
   );
 };
