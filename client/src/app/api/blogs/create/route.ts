@@ -8,9 +8,6 @@ export async function POST(req: NextRequest) {
 
     const errors = await validateBlogCreateData(body);
 
-    console.error(errors);
-    console.error(body);
-
     if (errors.length > 0) {
       return NextResponse.json(
         {
