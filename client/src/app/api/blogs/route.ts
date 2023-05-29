@@ -16,6 +16,9 @@ export async function GET(req: NextRequest) {
       where: {},
       skip: skip || 0,
       take: pageSize || 9,
+      include: {
+        user: true,
+      },
     });
 
     return NextResponse.json({ blogs, page, pageSize });
