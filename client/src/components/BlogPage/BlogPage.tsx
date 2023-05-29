@@ -66,14 +66,7 @@ export const BLogPage = (): JSX.Element => {
           ></BlogPost>
         ))}
       </div>
-      <button
-        className={classNames(
-          'browse-loader',
-          fetching === true ? 'bg-white' : null
-        )}
-        onClick={handleLoadMore}
-        disabled={fetching}
-      >
+      <button className="browse-loader" onClick={handleLoadMore}>
         Load More
       </button>
     </>
