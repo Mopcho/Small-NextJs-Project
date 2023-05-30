@@ -5,8 +5,10 @@ import { BlogPost } from '../BlogPost/BlogPost';
 import axios from 'axios';
 import { IBlogPost } from '@/lib/types';
 import { format } from 'date-fns';
+import { useRouter } from 'next/navigation';
 
 export const BLogPage = (): JSX.Element => {
+  const router = useRouter();
   const [pagination, setPagination] = useState({
     page: 1,
     pageSize: 3,
@@ -58,16 +60,20 @@ export const BLogPage = (): JSX.Element => {
     <>
       <div className="browse-content">
         {posts.map((post) => (
-          <BlogPost
-            title={post.title}
-            username={post.user.name}
+          <button
             key={post.id}
-            createtAt={format(
-              new Date(post.createdAt),
-              // eslint-disable-next-line quotes
-              "'Posted at' MMMM yyyy"
-            )}
-          ></BlogPost>
+            onClick={() => router.push(`/browse/${post.id}`)}
+          >
+            <BlogPost
+              title={post.title}
+              username={post.user.name}
+              createtAt={format(
+                new Date(post.createdAt),
+                // eslint-disable-next-line quotes
+                "'Posted at' MMMM yyyy"
+              )}
+            ></BlogPost>
+          </button>
         ))}
       </div>
       {pagination.isLastPage ? (
